@@ -1,0 +1,15 @@
+.login-page {
+    background: url('../../img/oj-reviews.png');
+    background-size: cover;
+
+    .welcome-buttons {
+      padding-top: 120%;
+
+      .login-button {
+        font-size: 20px;
+      }
+      .sign-up-button {
+        font-size: 20px;
+      }
+    }
+}
