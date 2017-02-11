@@ -6,6 +6,9 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/auth/login.page';
+import { AppServices } from '../services';
+import { ngKitModule } from 'ngkit';
+import { ngkitConfig } from '../config';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { LoginPage } from '../pages/auth/login.page';
     LoginPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ngKitModule.forRoot(ngkitConfig),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,6 +32,6 @@ import { LoginPage } from '../pages/auth/login.page';
     TabsPage,
     LoginPage
   ],
-  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
+  providers: [...AppServices, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }

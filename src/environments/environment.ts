@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://ojreviews.dev',
+  apiBaseUrl: 'https://ojreviews.dev/api',
   devMode: true
 };
