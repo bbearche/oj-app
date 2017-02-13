@@ -1,0 +1,46 @@
+<ion-content class="welcome-page">
+
+  <div class="errors" *ngIf="errors">
+    {{ errors[0] }}
+  </div>
+
+  <form class="auth-form sign-up-form" padding-left padding-right [formGroup]="form"
+    (submit)="register()">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" required
+          placeholder="Username"
+          formControlName="username">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="email" required
+          placeholder="Email"
+          formControlName="email">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" required
+          placeholder="Password"
+          formControlName="password">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button color="secondary" block
+      [disabled]="!form.valid || loading" (click)="register()">
+      <span *ngIf="!loading">Create Account</span>
+      <span *ngIf="loading">Loading</span>
+    </button>
+
+    <br>
+
+    <p style="text-align:center">
+      <a navpop>
+        <i class="app-icon-arrow-dropleft" style="vertical-align: middle;"></i> Cancel
+      </a>
+    </p>
+  </form>
+</ion-content>

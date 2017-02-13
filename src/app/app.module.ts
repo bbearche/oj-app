@@ -9,6 +9,8 @@ import { WelcomePage } from '../pages/auth/welcome.page';
 import { AppServices } from '../services';
 import { ngKitModule } from 'ngkit';
 import { ngkitConfig } from '../config';
+import { SignUpPage } from '../pages/auth/sign-up.page';
+import { AppComponentsModule } from '../components/index';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { ngkitConfig } from '../config';
     ContactPage,
     HomePage,
     TabsPage,
-    WelcomePage
+    WelcomePage,
+    SignUpPage
   ],
   imports: [
+    AppComponentsModule,
     IonicModule.forRoot(MyApp),
     ngKitModule.forRoot(ngkitConfig),
   ],
@@ -30,7 +34,8 @@ import { ngkitConfig } from '../config';
     ContactPage,
     HomePage,
     TabsPage,
-    WelcomePage
+    WelcomePage,
+    SignUpPage
   ],
   providers: [...AppServices, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
