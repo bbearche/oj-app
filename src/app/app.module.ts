@@ -5,7 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/auth/login.page';
+import { WelcomePage } from '../pages/auth/welcome.page';
 import { AppServices } from '../services';
 import { ngKitModule } from 'ngkit';
 import { ngkitConfig } from '../config';
@@ -17,7 +17,7 @@ import { ngkitConfig } from '../config';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    WelcomePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -30,7 +30,7 @@ import { ngkitConfig } from '../config';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    WelcomePage
   ],
   providers: [...AppServices, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

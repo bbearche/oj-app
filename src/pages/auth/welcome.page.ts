@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  templateUrl: 'login.page.html'
+  templateUrl: 'welcome.page.html'
 })
-export class LoginPage {
+export class WelcomePage {
   constructor(
     public authService: AuthService
   ) { }

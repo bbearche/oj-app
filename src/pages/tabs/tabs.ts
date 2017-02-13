@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
-import { LoginPage } from '../auth/login.page';
+import { WelcomePage } from '../auth/welcome.page';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -23,7 +23,7 @@ export class TabsPage {
 
   ngOnInit() {
     if (!this.loggedIn) {
-      this.nav.push(LoginPage);
+      this.nav.push(WelcomePage);
     }
   }
 
