@@ -10,6 +10,8 @@ import { AppServices } from '../services';
 import { ngKitModule } from 'ngkit';
 import { ngkitConfig } from '../config';
 import { SignUpPage } from '../pages/auth/sign-up.page';
+import { LoginPage } from '../pages/auth/login.page';
+
 import { AppComponentsModule } from '../components/index';
 
 @NgModule({
@@ -20,7 +22,8 @@ import { AppComponentsModule } from '../components/index';
     HomePage,
     TabsPage,
     WelcomePage,
-    SignUpPage
+    SignUpPage,
+    LoginPage
   ],
   imports: [
     AppComponentsModule,
@@ -35,7 +38,8 @@ import { AppComponentsModule } from '../components/index';
     HomePage,
     TabsPage,
     WelcomePage,
-    SignUpPage
+    SignUpPage,
+    LoginPage
   ],
   providers: [...AppServices, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

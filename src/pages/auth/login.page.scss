@@ -1,15 +1,13 @@
-.sign-up-form {
+.login-form {
   padding-top: 110%;
+
   .item-ios {
     margin-top: 4%;
     border-radius: 10px;
   }
-  ion-list {
-    margin-bottom: 15px;
-  }
 }
-.errors-signup {
-  margin-top: 105%;
+.errors {
+  padding-top: 106%;
   text-align: center;
   position: absolute;
   width: 100%;

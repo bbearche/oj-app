@@ -19,10 +19,23 @@ export class AuthService {
    * @return {Promise<any>}
    */
   register(data: any): Promise<any> {
-
     return new Promise((resolve, reject) => {
       this.http.post(`register`, data).first()
         .subscribe(res => resolve(res), error => reject(error));
     });
   }
+
+  /**
+   * Posts login to api
+   *
+   * @param  {any} data
+   * @return {Promise<any>}
+   */
+  login(data: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.post(`login`, data).first()
+        .subscribe(res => resolve(res), error => reject(error));
+    });
+  }
+
 }
