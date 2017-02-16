@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { HomePage } from '../home/home';
 import { Authentication } from 'ngkit';
+import { TabsPage } from '../../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'login.page.html'
@@ -53,7 +53,8 @@ export class LoginPage {
     this.auth.login(this.form.value).then((res) => {
       this.loading = false;
 
-      this.nav.setRoot(HomePage, {}, {
+      this.nav.setRoot(TabsPage, {}, {
+        direction: 'forward',
         animate: true
       });
     }, (errors) => {

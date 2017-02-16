@@ -23,9 +23,7 @@ export class TabsPage {
   ) { }
 
   ngOnInit() {
-    if (!this.auth.user()) {
-      this.nav.push(WelcomePage);
-    }
+
   }
 
 }
