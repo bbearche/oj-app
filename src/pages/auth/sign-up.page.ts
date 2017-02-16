@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { HomePage } from '../home/home';
+import { Authentication } from 'ngkit';
+import { TabsPage } from '../../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'sign-up.page.html'
@@ -35,7 +36,8 @@ export class SignUpPage {
 
   constructor(
     public authService: AuthService,
-    public nav: NavController
+    public nav: NavController,
+    public auth: Authentication
   ) { }
 
   ngOnInit() {
@@ -45,12 +47,19 @@ export class SignUpPage {
   register() {
     this.loading = true;
 
-    this.authService.register(this.form.value).then((res) => {
-      this.loading = false;
-      this.nav.push(HomePage);
-    }, (errors) => {
-      this.loading = false;
+    this.auth.register(this.form.value).then((res: any) => {
+      this.auth.storeToken(res).then(() => {
+        this.nav.setRoot(TabsPage, {}, {
+          direction: 'forward',
+          animate: true
+        });
+
+        this.loading = false;
+      });
+    }, errors => {
       this.errors = Object.keys(errors).map(function(key) { return errors[key]; });
+
+      this.loading = false;
     });
   }
 
