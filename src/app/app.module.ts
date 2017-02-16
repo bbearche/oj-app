@@ -11,6 +11,7 @@ import { ngKitModule } from 'ngkit';
 import { ngkitConfig } from '../config';
 import { SignUpPage } from '../pages/auth/sign-up.page';
 import { LoginPage } from '../pages/auth/login.page';
+import { Storage } from '@ionic/storage';
 
 import { AppComponentsModule } from '../components/index';
 
@@ -41,6 +42,10 @@ import { AppComponentsModule } from '../components/index';
     SignUpPage,
     LoginPage
   ],
-  providers: [...AppServices, { provide: ErrorHandler, useClass: IonicErrorHandler }]
+  providers: [
+    ...AppServices,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Storage
+  ]
 })
 export class AppModule { }

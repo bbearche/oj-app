@@ -3,11 +3,12 @@ import { NavController } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HomePage } from '../home/home';
+import { Authentication } from 'ngkit';
 
 @Component({
   templateUrl: 'login.page.html'
 })
-export class LoginPage{
+export class LoginPage {
 
   /**
    * Loading state of the component.
@@ -34,7 +35,8 @@ export class LoginPage{
 
   constructor(
     public authService: AuthService,
-    public nav: NavController
+    public nav: NavController,
+    public auth: Authentication
   ) { }
 
   ngOnInit() {
@@ -48,9 +50,12 @@ export class LoginPage{
   login() {
     this.loading = true;
 
-    this.authService.login(this.form.value).then((res) => {
+    this.auth.login(this.form.value).then((res) => {
       this.loading = false;
-      this.nav.push(HomePage);
+
+      this.nav.setRoot(HomePage, {}, {
+        animate: true
+      });
     }, (errors) => {
       this.loading = false;
       this.errors = errors;

@@ -3,13 +3,13 @@ import { environment } from './environments/environment';
 export const ngkitConfig = {
   authentication: {
     endpoints: {
-      check: 'auth/user',
-      forgotPassword: 'auth/password/email',
-      getUser: 'auth/user',
-      login: 'auth/login',
-      logout: 'auth/logout',
-      register: 'auth/registration',
-      resetPassword: 'auth/password/reset',
+      check: 'user',
+      forgotPassword: 'password/email',
+      getUser: 'user',
+      login: 'login',
+      logout: 'logout',
+      register: 'register',
+      resetPassword: 'password/reset',
     },
   },
   devMode: environment.devMode,

@@ -3,23 +3,51 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { ngKit } from 'ngkit';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { Authentication } from 'ngkit';
+import { Storage } from '@ionic/storage';
+import { LoginPage } from '../pages/auth/login.page'
+import { WelcomePage } from '../pages/auth/welcome.page'
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
+  /**
+   * Root page for app.
+   */
+  rootPage: any = null;
 
   constructor(
     public platform: Platform,
-    public ngkit: ngKit
+    public ngkit: ngKit,
+    private storage: Storage,
+    public auth: Authentication
   ) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+    this.getRootPage().then(rootPage => this.rootPage = rootPage);
+
+    platform.ready().then(() => StatusBar.styleLightContent());
+  }
+
+  /**
+     * Get the root page on app init.
+     *
+     * @return object
+     */
+  getRootPage() {
+    return new Promise((resolve, reject) => {
+      this.auth.check().then(logged_in => {
+        let rootPage = TabsPage
+
+        resolve(rootPage);
+      }, error => {
+        this.storage.get('login_details').then(login_details => {
+          if (login_details) {
+            resolve(LoginPage);
+          }
+
+          resolve(WelcomePage);
+        });
+      });
     });
   }
 }

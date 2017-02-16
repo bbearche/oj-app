@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { Authentication } from 'ngkit';
 import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
@@ -18,11 +18,12 @@ export class TabsPage {
 
   loggedIn = false;
   constructor(
-    public nav: NavController
+    public nav: NavController,
+    public auth: Authentication
   ) { }
 
   ngOnInit() {
-    if (!this.loggedIn) {
+    if (!this.auth.user()) {
       this.nav.push(WelcomePage);
     }
   }
