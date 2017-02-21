@@ -1,3 +1,14 @@
-page-home {
+.home-page {
+    background: url('../../img/oj-home.png');
+    background-size: cover;
+    background-color: #FF9600;
+}
 
+.searchbar-ios {
+  padding: 0 8px;
+  min-height: 44px;
+  border-top: 0.55px solid transparent;
+  border-bottom: none;
+  background: none;
+  margin-top: 15px;
 }

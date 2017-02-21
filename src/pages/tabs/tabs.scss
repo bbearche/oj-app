@@ -1,0 +1,27 @@
+.tabs-ios .tabbar {
+    justify-content: center;
+    border-top: none;
+    background: none;
+    margin-bottom: 60px;
+}
+
+ion-icon.tab-button-icon.icon.icon-ios.ion-ios-search-outline {
+  border: none;
+}
+#tab-t0-0 {
+  padding-left: 30px;
+}
+
+#tab-t0-1 {
+  padding-right: 30px;
+}
+.tabs-ios .tab-button-icon {
+    margin-top: 4px;
+    margin-bottom: 1px;
+    min-width: 60px;
+    height: 60px;
+    font-size: 60px;
+    color: #fff;
+    border: 2px solid white;
+    border-radius: 50%;
+  }

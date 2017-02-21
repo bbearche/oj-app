@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar } from 'ionic-native';
 import { ngKit } from 'ngkit';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Authentication } from 'ngkit';
