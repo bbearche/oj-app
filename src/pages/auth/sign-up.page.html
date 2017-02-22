@@ -1,7 +1,7 @@
 <ion-content class="welcome-page">
   <ion-header>
       <ion-buttons start>
-        <button ion-button clear color="secondary" navPop>
+        <button ion-button clear color="green" navPop>
           <strong style="font-size: 20px">Back</strong>
         </button>
       </ion-buttons>
@@ -36,7 +36,7 @@
       </ion-item>
     </ion-list>
 
-    <button ion-button color="secondary" block
+    <button ion-button color="green" block
       [disabled]="!form.valid || loading" (click)="register()">
       <span *ngIf="!loading">Create Account</span>
       <span *ngIf="loading">Loading</span>
