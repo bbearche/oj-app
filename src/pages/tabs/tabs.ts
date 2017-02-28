@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { Authentication } from 'ngkit';
 import { HomePage } from '../home/home';
 import { ProfilePage } from '../profile/profile';
-import { ContactPage } from '../contact/contact';
 
 @Component({
   templateUrl: 'tabs.html'

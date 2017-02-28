@@ -11,6 +11,8 @@ import { ngKitModule } from 'ngkit';
 import { ngkitConfig } from '../config';
 import { SignUpPage } from '../pages/auth/sign-up.page';
 import { LoginPage } from '../pages/auth/login.page';
+import { ProfileInfoPage} from '../pages/profile/profile-info.page';
+import { ProfileEditPage} from '../pages/profile/profile-edit.page';
 import { Storage } from '@ionic/storage';
 
 import { AppComponentsModule } from '../components/index';
@@ -24,7 +26,9 @@ import { AppComponentsModule } from '../components/index';
     TabsPage,
     WelcomePage,
     SignUpPage,
-    LoginPage
+    LoginPage,
+    ProfileInfoPage,
+    ProfileEditPage
   ],
   imports: [
     AppComponentsModule,
@@ -40,7 +44,9 @@ import { AppComponentsModule } from '../components/index';
     TabsPage,
     WelcomePage,
     SignUpPage,
-    LoginPage
+    LoginPage,
+    ProfileInfoPage,
+    ProfileEditPage
   ],
   providers: [
     ...AppServices,

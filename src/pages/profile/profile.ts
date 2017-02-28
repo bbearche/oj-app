@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { ProfileInfoPage } from './profile-info.page';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -8,8 +8,11 @@ import { NavController } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public nav: NavController
+  ) { }
 
+  goToInfo() {
+    this.nav.push(ProfileInfoPage);
   }
-
 }
