@@ -4,4 +4,21 @@
   h1{
     font-size: 4.6rem;
   }
+
+  .item-ios {
+    background-color: rgba(255, 150, 0, 0.0);
+    color: #fff;
+  }
+
+  .list-ios > .item-block:first-child {
+    border-top: 0px;
+  }
+
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+      border-bottom: 0px;
+  }
+
+  ion-note {
+    color: #fff;
+  }
 }

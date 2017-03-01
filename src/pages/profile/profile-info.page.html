@@ -1,34 +1,31 @@
 <ion-content padding class="profile-info-page">
-  <ion-buttons start>
-    <button ion-button clear color="white" navPop>
+  <ion-buttons>
+    <button start ion-button clear color="white" navPop>
       <strong style="font-size: 20px">Back</strong>
     </button>
-  </ion-buttons>
-  <ion-buttons end>
-    <button ion-button clear color="white" (click)="goToEdit()">
-      <strong style="font-size: 20px">Edit</strong>
+
+    <button end ion-button clear color="white" (click)="goToEdit()" style="float:right;">
+      <strong style="font-size:20px;">Edit</strong>
     </button>
   </ion-buttons>
 
-  <div text-center>
-    <h1 color="white">{{ user.username }}</h1>
-  </div>
+    <h1 color="white" text-center>{{ user.username }}</h1>
 
   <ion-list>
-    <ion-item>
-        First Name:
+    <ion-item class="first-item">
+        <strong>First Name:</strong>
       <ion-note>{{ user.first_name }}</ion-note>
     </ion-item>
     <ion-item>
-        Last Name:
+      <strong>Last Name:</strong>
       <ion-note>{{ user.last_name }}</ion-note>
     </ion-item>
     <ion-item>
-        City:
+        <strong>City:</strong>
       <ion-note>{{ user.city}}</ion-note>
     </ion-item>
-    <ion-item>
-        State:
+    <ion-item class="last-item">
+        <strong>State:</strong>
       <ion-note>{{ user.state}}</ion-note>
     </ion-item>
   </ion-list>
