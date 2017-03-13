@@ -18,10 +18,12 @@ export class UserService {
    * @param  {any} data
    * @return {Promise<any>}
    */
-  update(data: any, id: number): Promise<any> {
+  update(data: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.http.post(`update/${id}`, data).first()
-        .subscribe(res => resolve(res), error => reject(error));
+      this.http.put(`user`, data).first()
+        .subscribe(res => {
+          resolve(res);
+        }, error => reject(error));
     });
   }
 }

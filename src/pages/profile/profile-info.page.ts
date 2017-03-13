@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Authentication } from 'ngkit';
+import { Authentication, Event } from 'ngkit';
 import { NavController } from 'ionic-angular';
 import { ProfileEditPage } from './profile-edit.page';
 @Component({
   selector: 'profile-info',
   templateUrl: 'profile-info.page.html'
 })
-export class ProfileInfoPage{
+export class ProfileInfoPage {
 
   /**
    * The user for the page.
@@ -17,7 +17,8 @@ export class ProfileInfoPage{
 
   constructor(
     public nav: NavController,
-    public auth: Authentication
+    public auth: Authentication,
+    public event: Event
   ) { }
 
   /**
@@ -27,6 +28,10 @@ export class ProfileInfoPage{
    */
   ngOnInit() {
     this.user = this.auth.user();
+
+    this.event.listen('update:user').subscribe(() => {
+      this.user = this.auth.authUser;
+    })
   }
 
   goToEdit() {
