@@ -9,7 +9,13 @@
     </button>
   </ion-buttons>
 
-    <h1 color="white" text-center>{{ user.username }}</h1>
+  <div text-center>
+    <img *ngIf="user.profile_image" class="profile-icon" [src]="user.profile_image">
+
+    <ion-icon *ngIf="!user.profile_image"  name="person" class="profile-icon"></ion-icon>
+  </div>
+
+  <h1 no-padding color="white" text-center>{{ user.username }}</h1>
 
   <ion-list>
     <ion-item class="first-item">

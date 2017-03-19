@@ -6,6 +6,8 @@
   </ion-buttons>
 
   <div text-center>
-    <ion-icon name="person" class="profile-icon"></ion-icon>
+    <img *ngIf="user.profile_image" class="profile-icon" [src]="user.profile_image">
+
+    <ion-icon *ngIf="!user.profile_image"  name="person" class="profile-icon"></ion-icon>
   </div>
 </ion-content>

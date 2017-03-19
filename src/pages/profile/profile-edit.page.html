@@ -9,10 +9,19 @@
     </button>
   </ion-buttons>
 
+  <div text-center>
+    <button text-center (click)="updatePhoto()">
+      <img *ngIf="user.profile_image" class="profile-icon" [src]="user.profile_image">
+
+      <ion-icon *ngIf="!user.profile_image"  name="person" class="profile-icon"></ion-icon>
+    </button>
+  </div>
+
+
   <form *ngIf="form"
     [formGroup]="form">
       <ion-list>
-        <ion-item>
+        <ion-item class="first-item">
           <ion-label>Username</ion-label>
           <ion-input type="text"
             formControlName="username" required>
@@ -47,7 +56,7 @@
            </ion-input>
         </ion-item>
 
-        <ion-item>
+        <ion-item class="last-item">
           <ion-label>State</ion-label>
           <ion-input type="text"
             formControlName="state">

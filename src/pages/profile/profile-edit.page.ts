@@ -65,4 +65,8 @@ export class ProfileEditPage {
       this.nav.pop();
     })
   }
+
+  updatePhoto() {
+    console.log('test');
+  }
 }
