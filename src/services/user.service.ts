@@ -26,4 +26,19 @@ export class UserService {
         }, error => reject(error));
     });
   }
+
+  /**
+   * Posts a profile-image to the api.
+   *
+   * @param  {any} data
+   * @return {Promise<any>}
+   */
+  updateProfileImage(data: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.post(`user/profile-image`, data).first()
+        .subscribe(res => {
+          resolve(res);
+        }, error => reject(error));
+    });
+  }
 }

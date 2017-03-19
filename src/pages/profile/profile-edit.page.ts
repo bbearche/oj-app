@@ -3,6 +3,7 @@ import { Authentication, Event } from 'ngkit';
 import { NavController } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
 import { UserService } from '../../services/user.service';
+import { Camera } from 'ionic-native';
 
 @Component({
   selector: 'profile-edit',
@@ -67,6 +68,16 @@ export class ProfileEditPage {
   }
 
   updatePhoto() {
-    console.log('test');
+    Camera.getPicture().then((imageData) => {
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+
+      this.userService.updateProfileImage(base64Image).then(image => {
+        this.user.profile_image = image.profile_image;
+      });
+
+    }, (err) => {
+      console.log(err)
+    });
   }
+
 }

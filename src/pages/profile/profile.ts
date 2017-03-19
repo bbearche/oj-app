@@ -33,7 +33,6 @@ export class ProfilePage {
    */
   ngOnInit() {
     this.user = this.auth.user();
-    console.log(this.user);
   }
 
   /**
