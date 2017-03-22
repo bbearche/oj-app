@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Event } from 'ngkit';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
@@ -41,4 +42,15 @@ export class UserService {
         }, error => reject(error));
     });
   }
+
+  /**
+     * Search for a user.
+     *
+     * @param  {object}  data
+     * @return {Observable<any>}
+     */
+  search(data: any): Observable<any> {
+    return this.http.post('users/search', data).first();
+  }
+
 }
