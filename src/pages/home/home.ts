@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { NavController } from 'ionic-angular';
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   selector: 'page-home',
@@ -27,7 +28,7 @@ export class HomePage {
    * @param  {UserService}   userService
    */
   constructor(
-    public navCtrl: NavController,
+    public nav: NavController,
     private userService: UserService
   ) { }
 
@@ -46,5 +47,9 @@ export class HomePage {
         this.users = res.data;
       });
     }
+  }
+
+  goToUser(id: any): void {
+    this.nav.push(ProfilePage, { id: id });
   }
 }

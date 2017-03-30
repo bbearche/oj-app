@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ProfileInfoPage } from './profile-info.page';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Authentication } from 'ngkit';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'profile-page',
@@ -23,7 +24,9 @@ export class ProfilePage {
    */
   constructor(
     public nav: NavController,
-    public auth: Authentication
+    public auth: Authentication,
+    public params: NavParams,
+    public userService: UserService
   ) { }
 
   /**
@@ -32,13 +35,19 @@ export class ProfilePage {
    * @return {[type]} [description]
    */
   ngOnInit() {
-    this.user = this.auth.user();
+    if (this.params.data.id) {
+      this.userService.getUser(this.params.data.id).then((res) => {
+        this.user = res.data;
+      })
+    } else {
+      this.user = this.auth.user();
+    }
   }
 
   /**
    * Navigates to the profile info page.
    */
-  goToInfo() {
-    this.nav.push(ProfileInfoPage);
+  goToInfo(user: number) {
+    this.nav.push(ProfileInfoPage, { user: user });
   }
 }

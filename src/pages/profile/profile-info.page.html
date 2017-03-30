@@ -4,7 +4,8 @@
       <strong style="font-size: 20px">Back</strong>
     </button>
 
-    <button end ion-button clear color="white" (click)="goToEdit()" style="float:right;">
+    <button *ngIf="user == auth.user()" end ion-button clear color="white"
+    (click)="goToEdit()" style="float:right;">
       <strong style="font-size:20px;">Edit</strong>
     </button>
   </ion-buttons>

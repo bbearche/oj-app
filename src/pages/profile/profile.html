@@ -1,13 +1,18 @@
-<ion-content padding class="profile-page">
+<ion-content padding class="profile-page" *ngIf="user">
   <ion-buttons end>
-    <button ion-button clear color="white" (click)="goToInfo()">
+    <button ion-button clear color="white" (click)="goToInfo(user)">
       <strong style="font-size: 20px">Info</strong>
     </button>
   </ion-buttons>
 
-  <div text-center>
-    <img *ngIf="user.profile_image" class="profile-icon" [src]="user.profile_image">
+  <div *ngIf="user">
+    <div text-center>
+      <img *ngIf="user.profile_image" class="profile-icon" [src]="user.profile_image">
 
-    <ion-icon *ngIf="!user.profile_image"  name="person" class="profile-icon"></ion-icon>
+      <ion-icon *ngIf="!user.profile_image"  name="person" class="profile-icon"></ion-icon>
+    </div>
+
+    <h1 no-margin color="white" text-center>{{ user.username }}</h1>
   </div>
+
 </ion-content>

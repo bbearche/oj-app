@@ -4,7 +4,7 @@
 
 <ion-content padding class="home-page">
   <ion-list [hidden]="!users?.length">
-    <ion-item detail-none  *ngFor="let user of users">
+    <ion-item detail-none  *ngFor="let user of users" (click)="goToUser(user.id)">
       <ion-avatar item-left>
         <img *ngIf="user.profile_image" class="profile-image" [src]="user.profile_image">
 

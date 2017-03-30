@@ -53,4 +53,17 @@ export class UserService {
     return this.http.post('users/search', data).first();
   }
 
+  /**
+   * Gets a single user.
+   *
+   * @param  {number} id
+   * @return {Promise<any>}
+   */
+  getUser(id: number): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.get(`user/${id}`).first().subscribe(res => {
+        resolve(res);
+      }, error => reject(error));
+    })
+  }
 }
