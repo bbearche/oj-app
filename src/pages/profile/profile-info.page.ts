@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Authentication, Event } from 'ngkit';
 import { NavController, NavParams } from 'ionic-angular';
 import { ProfileEditPage } from './profile-edit.page';
-import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'profile-info',
