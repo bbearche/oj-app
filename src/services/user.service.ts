@@ -59,9 +59,9 @@ export class UserService {
    * @param  {number} id
    * @return {Promise<any>}
    */
-  getUser(id: number): Promise<any> {
+  getUser(id: number, params?: {}): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.http.get(`user/${id}`).first().subscribe(res => {
+      this.http.get(`user/${id}`, params).first().subscribe(res => {
         resolve(res);
       }, error => reject(error));
     })
