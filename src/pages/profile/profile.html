@@ -13,6 +13,39 @@
     </div>
 
     <h1 ion-text no-margin color="white" text-center>{{ user.username }}</h1>
+
+    <div text-center *ngIf="orangeTypes">
+      <div [ngClass]="{'full-orange': orange == 'full', 'half-orange': orange == 'half'}"
+        *ngFor="let orange of orangeTypes">
+      </div>
+    </div>
+
+    <div class="score-text" text-center *ngIf="user.total_score">
+      <h2>{{ user.total_score }}/5 &nbsp;
+        <small>{{user.reviews.total}} Total Reviews</small>
+      </h2>
+    </div>
+
+    <div padding-top class="score-text" text-center *ngIf="!user.total_score">
+      <h2>This user hasn't received any reviews yet!
+      </h2>
+    </div>
+
+    <ion-list *ngIf="reviews" no-lines>
+      <ion-item *ngFor="let review of reviews">
+        <ion-avatar item-left>
+          <ion-icon name="person" class="small-icon"></ion-icon>
+        </ion-avatar>
+        <h2>{{ review.type }}</h2>
+        <p>{{ review.review }}</p>
+        <h1 item-right>{{ review.score }}/5</h1>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="getMoreReviews($event)">
+        <ion-infinite-scroll-content>Loading More Reviews...</ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
   </div>
 
 </ion-content>

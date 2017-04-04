@@ -1,6 +1,13 @@
 .profile-page {
   background: url('../../img/oj-background.png');
 
+
+
+  .scroll-content {
+    padding-bottom: 30px;
+    margin-bottom: 95px !important;
+  }
+
   .profile-icon {
     margin-top: 4px;
     margin-bottom: 1px;
@@ -10,5 +17,58 @@
     color: #fff;
     border: 4px solid white;
     border-radius: 50%;
+  }
+
+  .small-icon {
+    margin-top: 4px;
+    margin-bottom: 1px;
+    min-width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding-left: 5px;
+  }
+
+  .full-orange {
+    display: inline-block;
+    background-image: url('../../img/orange-icon.png');
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+  }
+
+  .half-orange {
+    display: inline-block;
+    background-image: url('../../img/half-orange-icon.png');
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+  }
+
+  .score-text {
+    font-style: italic;
+    color: white;
+    font-weight: 700;
+    padding-left: 6%;
+  }
+
+  ion-item {
+    color: white;
+    background-color: #ff8b00;
+
+    .item-inner {
+      color: white;
+      border-bottom: 1px white;
+
+      p {
+        color: white;
+      }
+    }
+  }
+
+  ion-infinite-scroll-content {
+    color: white;
   }
 }
