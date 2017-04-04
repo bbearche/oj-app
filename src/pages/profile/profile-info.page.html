@@ -37,4 +37,10 @@
     </ion-item>
   </ion-list>
 
+  <button ion-button block color="green" *ngIf="auth.user() == user"
+    [disabled]="loading" (click)="logout()">
+    <span *ngIf="!loading">Logout</span>
+    <span *ngIf="loading">Loading</span>
+  </button>
+
 </ion-content>

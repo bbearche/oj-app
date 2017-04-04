@@ -66,4 +66,19 @@ export class UserService {
       }, error => reject(error));
     })
   }
+
+  /**
+   * Logs a user out.
+   *
+   * @param  {any} data
+   * @return {Promise<any>}
+   */
+  logout(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.post(`logout`, {}).first()
+        .subscribe(res => {
+          resolve(res);
+        }, error => reject(error));
+    });
+  }
 }
