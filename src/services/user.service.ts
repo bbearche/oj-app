@@ -81,4 +81,19 @@ export class UserService {
         }, error => reject(error));
     });
   }
+
+  /**
+   * Posts a review for a user to the api.
+   *
+   * @param  {any} data
+   * @return {Promise<any>}
+   */
+  sendReview(data: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.post(`reviews`, data).first()
+        .subscribe(res => {
+          resolve(res);
+        }, error => reject(error));
+    });
+  }
 }
