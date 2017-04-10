@@ -1,4 +1,12 @@
 <ion-content padding class="profile-page" *ngIf="user">
+  <ion-buttons class="review-button">
+    <button start ion-button clear *ngIf="user != auth.user()"
+      color="white"
+      (click)="openReviewModal(user)">
+      <strong style="font-size: 20px">Review</strong>
+    </button>
+  </ion-buttons>
+
   <ion-buttons end>
     <button ion-button clear color="white" (click)="goToInfo(user)">
       <strong style="font-size: 20px">Info</strong>
@@ -26,7 +34,7 @@
       </h2>
     </div>
 
-    <div padding-top class="score-text" text-center *ngIf="!user.total_score">
+    <div padding-top class="score-text" text-center *ngIf="reviews.length == 0">
       <h2>This user hasn't received any reviews yet!
       </h2>
     </div>

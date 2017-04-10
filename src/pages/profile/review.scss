@@ -1,0 +1,24 @@
+.review-page {
+  background: url('../../img/oj-background.png');
+
+  .login-form {
+    padding-top: 50%;
+
+    .item-ios {
+      margin-top: 4%;
+      border-radius: 10px;
+    }
+  }
+}
+
+body > ion-app > ion-alert > div > div.alert-button-group > button:nth-child(2){
+  color: black
+}
+
+body > ion-app > ion-alert > div > div.alert-button-group > button:nth-child(1){
+  color: black
+}
+
+.alert-ios [aria-checked=true] .alert-radio-label {
+  color: blue;
+}

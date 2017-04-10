@@ -1,0 +1,49 @@
+<ion-content padding class="review-page" *ngIf="user">
+  <ion-buttons end>
+    <button ion-button clear color="white" (click)="close()">
+      <strong style="font-size: 20px">Cancel</strong>
+    </button>
+  </ion-buttons>
+
+  <div padding-top margin-top *ngIf="user" text-center>
+    <h2 color="white">Submit a review for</h2>
+    <h1 color="white">{{user.username}}</h1>
+  </div>
+
+  <form class="auth-form login-form" padding-left padding-right [formGroup]="form"
+    (submit)="submitReview()">
+    <ion-list>
+      <ion-item>
+        <ion-label>score</ion-label>
+        <ion-select formControlName="score" required>
+          <ion-option value="1">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="5">5</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" required
+          placeholder="Job Type"
+          formControlName="type">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea required
+          placeholder="Enter a review..."
+          formControlName="review"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+  <button ion-button block color="green"
+    [disabled]="loading" (click)="submitReview()">
+    <span *ngIf="!loading">Submit Review</span>
+    <span *ngIf="loading">Loading</span>
+  </button>
+
+</ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProfileInfoPage } from './profile-info.page';
-import { NavController, NavParams } from 'ionic-angular';
+import { ReviewPage } from './review.page';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { Authentication } from 'ngkit';
 import { UserService } from '../../services/user.service';
 
@@ -47,7 +48,8 @@ export class ProfilePage {
     public nav: NavController,
     public auth: Authentication,
     public params: NavParams,
-    public userService: UserService
+    public userService: UserService,
+    public modal: ModalController
   ) { }
 
   /**
@@ -116,4 +118,17 @@ export class ProfilePage {
     }
   }
 
+  /**
+   * Opens the review Modal.
+   */
+  openReviewModal(user: any): void {
+    let reviewModal = this.modal.create(ReviewPage, { user: user });
+    reviewModal.present();
+
+    reviewModal.onDidDismiss(data => {
+      if (data) {
+        this.reviews.unshift(data);
+      }
+    });
+  }
 }

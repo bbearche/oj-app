@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ProfilePage } from '../pages/profile/profile';
+import { ReviewPage } from '../pages/profile/review.page';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -28,7 +29,8 @@ import { AppComponentsModule } from '../components/index';
     SignUpPage,
     LoginPage,
     ProfileInfoPage,
-    ProfileEditPage
+    ProfileEditPage,
+    ReviewPage
   ],
   imports: [
     AppComponentsModule,
@@ -46,7 +48,8 @@ import { AppComponentsModule } from '../components/index';
     SignUpPage,
     LoginPage,
     ProfileInfoPage,
-    ProfileEditPage
+    ProfileEditPage,
+    ReviewPage
   ],
   providers: [
     ...AppServices,
